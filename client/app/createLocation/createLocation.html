@@ -29,6 +29,11 @@
           <input type="text" class="form-control" name="name" ng-model="location.name" placeholder="Enter Location Name" required/>
           <span class="control-label" ng-show="newLocation.name.$invalid && newLocation.name.$touched"> Name is required <br></span>
         </div>
+        <div class="form-group" ng-class="{ 'has-error': newLocation.thumbnailUrl.$invalid && newLocation.thumbnailUrl.$touched }">
+          <label class="control-label">thumbnailUrl :</label>
+          <input type="text" class="form-control" name="thumbnailUrl" ng-model="location.thumbnailUrl" placeholder="Enter thumbnailUrl" required/>
+          <span class="control-label" ng-show="newLocation.thumbnailUrl.$invalid && newLocation.thumbnailUrl.$touched"> thumbnailUrl is required <br></span>
+        </div>
         <div class="form-group" ng-class="{ 'has-error': newLocation.subTitle.$invalid && newLocation.subTitle.$touched }">
           <label class="control-label">Sub Title :</label>
           <input type="text" class="form-control" name="subTitle" ng-model="location.subTitle" placeholder="Enter Location Sub Title" required/>

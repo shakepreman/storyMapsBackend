@@ -17,6 +17,11 @@
           <input type="text" class="form-control" name="name" ng-model="story.name" placeholder="Enter Story Name" required/>
           <span class="control-label" ng-show="newStory.name.$invalid && newStory.name.$touched"> Name is required <br></span>
         </div>
+        <div class="form-group" ng-class="{ 'has-error': newLocation.thumbnailUrl.$invalid && newLocation.thumbnailUrl.$touched }">
+          <label class="control-label">thumbnailUrl :</label>
+          <input type="text" class="form-control" name="thumbnailUrl" ng-model="location.thumbnailUrl" placeholder="Enter thumbnailUrl" required/>
+          <span class="control-label" ng-show="newLocation.thumbnailUrl.$invalid && newLocation.thumbnailUrl.$touched"> thumbnailUrl is required <br></span>
+        </div>
         <div class="form-group" ng-class="{ 'has-error': newStory.description.$invalid && newStory.description.$touched }">
           <label class="control-label">Description :</label>
           <textarea rows="5" class="form-control" name="description" ng-model="story.description" placeholder="Enter Story Description" required/>

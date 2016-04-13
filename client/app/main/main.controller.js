@@ -4,6 +4,7 @@ angular.module('clientApp')
   .controller('MainCtrl', function ($scope, $http, $state) {
     $scope.story = {
       name: '',
+      thumbnailUrl: '',
       description: '',
       mapUrl: '',
       locations:[],

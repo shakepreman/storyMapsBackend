@@ -18,6 +18,7 @@ angular.module('clientApp')
 
     $scope.location = {
       name: '',
+      thumbnailUrl: '',
       subTitle: '',
       description: '',
       url: '',
