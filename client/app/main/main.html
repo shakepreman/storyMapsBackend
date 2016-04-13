@@ -1,0 +1,52 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Create an new Story</h1>
+    <p class="lead">Fill out the form below to add a new Story</p>
+    <img src="assets/images/favicon.ico" style="height:75px" alt="I'm Yeoman">
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-12"><br>
+      <form name="newStory">
+        <div class="form-group" ng-class="{ 'has-error': newStory.name.$invalid && newStory.name.$touched }">
+          <label class="control-label">Name :</label>
+          <input type="text" class="form-control" name="name" ng-model="story.name" placeholder="Enter Story Name" required/>
+          <span class="control-label" ng-show="newStory.name.$invalid && newStory.name.$touched"> Name is required <br></span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': newStory.description.$invalid && newStory.description.$touched }">
+          <label class="control-label">Description :</label>
+          <textarea rows="5" class="form-control" name="description" ng-model="story.description" placeholder="Enter Story Description" required/>
+          <span class="control-label" ng-show="newStory.description.$invalid && newStory.description.$touched"> Description is required <br></span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': newStory.mapUrl.$invalid && newStory.mapUrl.$touched }">
+          <label class="control-label">Map Url :</label>
+          <input type="text" class="form-control" name="mapUrl" ng-model="story.mapUrl" placeholder="Enter Story Map Url" required/>
+          <span class="control-label" ng-show="newStory.mapUrl.$invalid && newStory.mapUrl.$touched"> Map Url is required <br></span>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Difficulty :</label>
+          <select class="form-control"  ng-model="story.difficulty">
+            <option value="easy">Easy</option>
+            <option value="normal">Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': newStory.latitude.$invalid && newStory.latitude.$touched }">
+          <label class="control-label">Latitude :</label>
+          <input type="text" class="form-control" name="latitude" ng-model="story.latitude" placeholder="Enter Story Latitude" required/>
+          <span class="control-label" ng-show="newStory.latitude.$invalid && newStory.latitude.$touched"> Latitude is required <br></span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': newStory.longitude.$invalid && newStory.longitude.$touched }">
+          <label class="control-label">Longitude :</label>
+          <input type="text" class="form-control" name="longitude" ng-model="story.longitude" placeholder="Enter Story Longitude" required/>
+          <span class="control-label" ng-show="newStory.longitude.$invalid && newStory.longitude.$touched"> Longitude is required <br></span>
+        </div>
+        <br><button class="btn btn-success btn-block" ng-click="createStory(newStory.$valid)">Create Story!</button><br><br>
+      </form>
+    </div>
+  </div>
+</div>

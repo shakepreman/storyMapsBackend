@@ -1,0 +1,68 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Create an new Location</h1>
+    <p class="lead">Fill out the form below to add a new location</p>
+    <img src="assets/images/favicon.ico" style="height:75px" alt="I'm Yeoman">
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-12"><br>
+      <form name="newLocation">
+        <div class="form-group">
+          <label class="control-label">Select Story :</label>
+          <select class="form-control"  ng-model="story">
+            <option value="{{tmp._id}}" ng-repeat="tmp in stories">{{tmp.name}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Select Previous Location :</label>
+          <select class="form-control"  ng-model="prevLocation">
+            <option value="{{tmp._id}}" ng-repeat="tmp in locations">{{tmp.name}}</option>
+          </select>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': newLocation.name.$invalid && newLocation.name.$touched }">
+          <label class="control-label">Name :</label>
+          <input type="text" class="form-control" name="name" ng-model="location.name" placeholder="Enter Location Name" required/>
+          <span class="control-label" ng-show="newLocation.name.$invalid && newLocation.name.$touched"> Name is required <br></span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': newLocation.subTitle.$invalid && newLocation.subTitle.$touched }">
+          <label class="control-label">Sub Title :</label>
+          <input type="text" class="form-control" name="subTitle" ng-model="location.subTitle" placeholder="Enter Location Sub Title" required/>
+          <span class="control-label" ng-show="newLocation.subTitle.$invalid && newLocation.subTitle.$touched"> Sub Title is required <br></span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': newLocation.description.$invalid && newLocation.description.$touched }">
+          <label class="control-label">Description :</label>
+          <textarea rows="5" class="form-control" name="description" ng-model="location.description" placeholder="Enter Location Description" required/>
+          <span class="control-label" ng-show="newLocation.description.$invalid && newLocation.description.$touched"> Description is required <br></span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': newLocation.url.$invalid && newLocation.url.$touched }">
+          <label class="control-label">Url :</label>
+          <input type="text" class="form-control" name="url" ng-model="location.url" placeholder="Enter Location Url" required/>
+          <span class="control-label" ng-show="newLocation.url.$invalid && newLocation.url.$touched"> Url is required <br></span>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Url Type :</label>
+          <select class="form-control"  ng-model="location.urlType">
+            <option value="video">Video</option>
+            <option value="image">Image</option>
+          </select>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': newLocation.latitude.$invalid && newLocation.latitude.$touched }">
+          <label class="control-label">Latitude :</label>
+          <input type="text" class="form-control" name="latitude" ng-model="location.latitude" placeholder="Enter Location Latitude" required/>
+          <span class="control-label" ng-show="newLocation.latitude.$invalid && newLocation.latitude.$touched"> Latitude is required <br></span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': newLocation.longitude.$invalid && newLocation.longitude.$touched }">
+          <label class="control-label">Longitude :</label>
+          <input type="text" class="form-control" name="longitude" ng-model="location.longitude" placeholder="Enter Location Longitude" required/>
+          <span class="control-label" ng-show="newLocation.longitude.$invalid && newLocation.longitude.$touched"> Longitude is required <br></span>
+        </div>
+        <br><button class="btn btn-success btn-block" ng-click="createLocation(newLocation.$valid)">Create Location!</button><br><br>
+      </form>
+    </div>
+  </div>
+</div>
