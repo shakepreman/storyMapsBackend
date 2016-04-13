@@ -9,16 +9,10 @@ var path = require('path');
 
 module.exports = function(app) {
 
-  app.all('/api/locations', function(req, res, next) {
+  app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next()
-  });
-
-  app.all('/api/stories', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next()
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
   });
   // Insert routes below
   app.use('/api/locations', require('./api/location'));
