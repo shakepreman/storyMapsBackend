@@ -16,6 +16,7 @@ angular.module('clientApp')
 
     $scope.createStory = function(valid){
       if(valid){
+        console.log($scope.story);
         $http.post('/api/stories', $scope.story).success(function(data) {
           alert("Created story with id:"+data._id);
           $state.go('createLocation');
