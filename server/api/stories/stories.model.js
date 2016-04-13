@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 
 var StoriesSchema = new Schema({
   name: String,
+  thumbnailUrl: String,
   description: String,
   mapUrl: String,
   locations:[String],
